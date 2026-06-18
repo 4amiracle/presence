@@ -11,15 +11,13 @@ document.querySelectorAll('.signup-form').forEach(form => {
     btn.disabled = true;
 
     try {
-      const res = await fetch(form.action, {
+      await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
-        headers: { Accept: 'application/json' },
+        mode: 'no-cors',
       });
-      if (res.ok) {
         form.style.display = 'none';
         if (successEl) { successEl.classList.add('is-visible'); successEl.focus(); }
-      } else { throw new Error(); }
     } catch {
       form.classList.remove('is-loading');
       btn.disabled = false;
