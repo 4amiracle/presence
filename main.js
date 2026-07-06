@@ -21,7 +21,7 @@ document.querySelectorAll('.signup-form').forEach(form => {
     } catch {
       form.classList.remove('is-loading');
       btn.disabled = false;
-      showFormError(form, 'Something went wrong. Please email us directly at hello@presencenyc.com');
+      showFormError(form, 'Something went wrong. Please email us directly at mirarlshane@gmail.com');
     }
   });
 });
