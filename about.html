@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About the facilitator behind Soul Presence workshops in NYC.">
+  <title>About – Soul Presence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-page { padding: var(--sp-16) 0 var(--sp-20); }
+    .about-page .container { max-width: 760px; }
+    .about-photo {
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      margin: 0 auto var(--sp-10);
+      display: block;
+    }
+    @media(min-width: 640px) {
+      .about-layout { display: grid; grid-template-columns: 280px 1fr; gap: var(--sp-12); align-items: start; }
+      .about-photo { margin: 0; max-width: 100%; }
+    }
+    .about-bio h1 { color: var(--color-forest); margin-bottom: var(--sp-6); font-size: clamp(1.8rem, 4vw, 2.4rem); }
+    .about-bio p { color: var(--color-muted); margin-bottom: var(--sp-4); }
+    .about-bio p:last-child { margin-bottom: 0; }
+    .back-link { display: inline-flex; align-items: center; gap: var(--sp-2); color: var(--color-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: var(--sp-10); transition: color var(--ease); }
+    .back-link:hover { color: var(--color-forest); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-name" style="text-decoration:none">Soul Presence</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#workshops">Workshops</a>
+        <a href="index.html#details">Details</a>
+        <a href="about.html" aria-current="page">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="about-page">
+    <div class="container">
+      <a href="index.html" class="back-link">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+        Back
+      </a>
+      <div class="about-layout">
+        <img src="photo.jpg" alt="Your name" class="about-photo">
+        <div class="about-bio">
+          <h1>Your Name</h1>
+          <p>Your bio goes here.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-name">Soul Presence</p>
+      <p class="footer-tagline">Body &middot; Mind &middot; Heart</p>
+      <p class="footer-contact">Questions? <a href="mailto:mirarlshane@gmail.com">mirarlshane@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
