@@ -12,18 +12,25 @@
   <style>
     .about-page { padding: var(--sp-16) 0 var(--sp-20); }
     .about-page .container { max-width: 760px; }
+    .about-photo-wrap {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto var(--sp-10);
+      flex-shrink: 0;
+      border: 3px solid var(--color-earth);
+    }
     .about-photo {
       width: 100%;
-      max-width: 320px;
-      aspect-ratio: 3/4;
+      height: 100%;
       object-fit: cover;
-      border-radius: var(--radius-lg);
-      margin: 0 auto var(--sp-10);
+      object-position: center 15%;
       display: block;
     }
     @media(min-width: 640px) {
-      .about-layout { display: grid; grid-template-columns: 280px 1fr; gap: var(--sp-12); align-items: start; }
-      .about-photo { margin: 0; max-width: 100%; }
+      .about-layout { display: grid; grid-template-columns: 260px 1fr; gap: var(--sp-12); align-items: start; }
+      .about-photo-wrap { margin: 0; }
     }
     .about-bio h1 { color: var(--color-forest); margin-bottom: var(--sp-6); font-size: clamp(1.8rem, 4vw, 2.4rem); }
     .about-bio p { color: var(--color-muted); margin-bottom: var(--sp-4); }
@@ -54,7 +61,9 @@
         Back
       </a>
       <div class="about-layout">
-        <img src="photo.jpg" alt="Mira Shane" class="about-photo">
+        <div class="about-photo-wrap">
+          <img src="headshot.jpg" alt="Mira Shane" class="about-photo">
+        </div>
         <div class="about-bio">
           <h1>Mira Shane</h1>
           <p>Mira's passions come to life when she's building relationships, positivity, and storytelling for diverse communities. Facilitating high-energy workshops outside the "norm" reflects her people-centered work.</p>
