@@ -1,4 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#F5F0E8"/>
-  <path d="M16 25s-9-5.6-9-12a5.5 5.5 0 0 1 9-4.2A5.5 5.5 0 0 1 25 13c0 6.4-9 12-9 12z" fill="#8B1A1A"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Body: two atrial bumps at top, apex pulled left, right side fuller -->
+  <path d="
+    M 13.5 8
+    C 11 6, 7 7, 6 11
+    C 5 15, 5 20, 7 25
+    C 9 28.5, 11 30.5, 12 30.5
+    C 14 30.5, 18 27, 22 22
+    C 26 18, 28 13, 26.5 10
+    C 25 7, 21 6, 19 8
+    C 18 9, 17 10, 16 10
+    C 15.5 10, 14.5 9, 13.5 8 Z
+  " stroke="#8B1A1A" stroke-width="1.8" stroke-linejoin="round"/>
+
+  <!-- Anterior interventricular groove: runs from top-center down toward apex -->
+  <path d="M 16.5 11.5 C 15.5 17, 14.5 23, 13 29.5"
+    stroke="#111111" stroke-width="0.9" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- Right coronary: curves right along the AV groove -->
+  <path d="M 17 12 C 20 13, 23 15, 24 19"
+    stroke="#111111" stroke-width="0.7" stroke-linecap="round" opacity="0.6"/>
 </svg>
