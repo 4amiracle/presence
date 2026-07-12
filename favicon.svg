@@ -1,22 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Body: two atrial bumps at top, apex pulled left, right side fuller -->
+  <!--
+    True outer silhouette of an anatomical heart:
+    One continuous path tracing the full contour — from base of descending aorta,
+    up and over the aortic arch, down between arch and pulmonary trunk,
+    up over the pulmonary trunk, down the right border (right atrium),
+    around the apex (lower-left), up the left border, back to start.
+  -->
   <path d="
-    M 13.5 8
-    C 11 6, 7 7, 6 11
-    C 5 15, 5 20, 7 25
-    C 9 28.5, 11 30.5, 12 30.5
-    C 14 30.5, 18 27, 22 22
-    C 26 18, 28 13, 26.5 10
-    C 25 7, 21 6, 19 8
-    C 18 9, 17 10, 16 10
-    C 15.5 10, 14.5 9, 13.5 8 Z
-  " stroke="#8B1A1A" stroke-width="1.8" stroke-linejoin="round"/>
-
-  <!-- Anterior interventricular groove: runs from top-center down toward apex -->
-  <path d="M 16.5 11.5 C 15.5 17, 14.5 23, 13 29.5"
-    stroke="#111111" stroke-width="0.9" stroke-linecap="round" opacity="0.8"/>
-
-  <!-- Right coronary: curves right along the AV groove -->
-  <path d="M 17 12 C 20 13, 23 15, 24 19"
-    stroke="#111111" stroke-width="0.7" stroke-linecap="round" opacity="0.6"/>
+    M 11 12
+    C 10 8, 10.5 4, 13 2
+    C 15 0.5, 17.5 2, 17 5
+    C 17.5 4, 19 3.5, 21 3
+    C 23 2.5, 25 4.5, 24 8
+    C 27 9, 29 12, 28 17
+    C 27 22, 23 27, 18 30
+    C 16 31, 13 31, 11.5 30
+    C 8 28, 5 24, 5 19
+    C 5 13, 8 10, 10 10.5
+    C 10.5 11, 11 11.5, 11 12 Z
+  " stroke="#8B1A1A" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
 </svg>
