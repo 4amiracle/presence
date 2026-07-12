@@ -1,4 +1,4 @@
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzjwrJue6280SdTI-eqBDpzS4sqFZ_AhkDvnZLzIKyqd35PuZxuhD0__Ut3-JehwJCU/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzP2RG3xzkW8JOGxyNbwwtEwwYWtTvN9eNEyrGHN6KydNmrSSi_I3P71MV7KCH18pJf/exec';
 const TOTAL_SPOTS = 15;
 const WORKSHOP_KEYS = {
   virtual: 'Finding Your Voice (Virtual – August 19)',
