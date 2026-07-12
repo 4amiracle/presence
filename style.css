@@ -21,7 +21,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font-sans);background:var(--color-bg);color:var(--color-text);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-sans);background:var(--color-bg);color:var(--color-text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ul{list-style:none}
 img,svg{display:block}
 .skip-link{position:absolute;top:-200%;left:0;background:var(--color-forest);color:#fff;padding:var(--sp-3) var(--sp-6);text-decoration:none;z-index:9999;font-weight:500;border-radius:0 0 var(--radius-md) 0;transition:top var(--ease)}
@@ -52,6 +52,11 @@ p{font-size:clamp(1rem,2vw,1.0625rem);line-height:1.7}
 .site-header nav{display:flex;gap:var(--sp-6)}
 .site-header nav a{color:var(--color-muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color var(--ease)}
 .site-header nav a:hover{color:var(--color-forest)}
+@media(max-width:520px){
+  .site-name{font-size:1rem;letter-spacing:0.04em}
+  .site-header nav{gap:var(--sp-3)}
+  .site-header nav a{font-size:0.8rem}
+}
 .hero{padding:var(--sp-16) 0 var(--sp-20);overflow:hidden}
 .hero .container{display:flex;flex-direction:column;gap:var(--sp-10);align-items:center}
 @media(min-width:768px){.hero .container{flex-direction:row;align-items:center;justify-content:space-between;gap:var(--sp-16)}.hero-content{flex:1}}
