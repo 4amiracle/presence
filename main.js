@@ -1,3 +1,29 @@
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzjwrJue6280SdTI-eqBDpzS4sqFZ_AhkDvnZLzIKyqd35PuZxuhD0__Ut3-JehwJCU/exec';
+const TOTAL_SPOTS = 15;
+const WORKSHOP_KEYS = {
+  virtual: 'Finding Your Voice (Virtual – August 19)',
+  park: 'Ground & Voice (Prospect Park – August 22)'
+};
+
+async function updateSpotCounts() {
+  try {
+    const res = await fetch(SCRIPT_URL);
+    const counts = await res.json();
+    document.querySelectorAll('.spots-count').forEach(el => {
+      const key = el.dataset.workshop;
+      const taken = counts[WORKSHOP_KEYS[key]] || 0;
+      const remaining = Math.max(0, TOTAL_SPOTS - taken);
+      el.textContent = remaining === 0 ? 'Sold out' : `${remaining} spot${remaining === 1 ? '' : 's'} available`;
+      if (remaining === 0) {
+        const btn = el.closest('article')?.querySelector('.btn-workshop');
+        if (btn) { btn.textContent = 'Sold out'; btn.style.opacity = '0.5'; btn.style.pointerEvents = 'none'; }
+      }
+    });
+  } catch {
+    // silently fail — static counts stay visible
+  }
+}
+
 document.querySelectorAll('.signup-form').forEach(form => {
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -6,6 +32,7 @@ document.querySelectorAll('.signup-form').forEach(form => {
     const btn = form.querySelector('button[type="submit"]');
     const wrapper = form.closest('.form-wrapper');
     const successEl = wrapper.querySelector('.form-success');
+    const workshopKey = form.querySelector('input[name="workshop"]')?.value.includes('Virtual') ? 'virtual' : 'park';
 
     form.classList.add('is-loading');
     btn.disabled = true;
@@ -16,8 +43,15 @@ document.querySelectorAll('.signup-form').forEach(form => {
         body: new FormData(form),
         mode: 'no-cors',
       });
-        form.style.display = 'none';
-        if (successEl) { successEl.classList.add('is-visible'); successEl.focus(); }
+      form.style.display = 'none';
+      if (successEl) { successEl.classList.add('is-visible'); successEl.focus(); }
+      // optimistically decrement the spot count
+      const spotEl = document.querySelector(`.spots-count[data-workshop="${workshopKey}"]`);
+      if (spotEl && !spotEl.textContent.includes('Sold out')) {
+        const current = parseInt(spotEl.textContent) || TOTAL_SPOTS;
+        const remaining = Math.max(0, current - 1);
+        spotEl.textContent = remaining === 0 ? 'Sold out' : `${remaining} spot${remaining === 1 ? '' : 's'} available`;
+      }
     } catch {
       form.classList.remove('is-loading');
       btn.disabled = false;
@@ -65,3 +99,5 @@ function showFormError(form, message) {
 }
 
 function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+updateSpotCounts();
